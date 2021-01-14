@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&family=Yeon+Sung&display=swap');
+$Sunflower: 'Sunflower', sans-serif;
+$Yeon: 'Yeon Sung', cursive;
+
 .App{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
    
     .header{
+        border-bottom: 2px solid black;
+        box-shadow: 0 0 5px 5px #222222;
         @media (max-width: 768px){
            display: flex;
            align-items: center;
@@ -8,62 +17,197 @@
         }
         h1{
             text-align: center;
-            
+            font-family: $Yeon;
+            border: 2px solid black;
+            padding: 0 15px;
         }
         .nav-bar{
             position: relative;
-            .nav-icon{
-                text-align: right;
-                font-size: 30px;
-                @media (min-width: 768px){
-                    display: none;
+            .mobile{
+                .nav-icon{
+                    text-align: right;
+                    font-size: 30px;
+                    @media (min-width: 1024px){
+                        display: none;
+                    }
+                }
+                .links{
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    transition: transform 0.8s ease-in-out;
+                    background-color: white;
+                    z-index: 3;
+                    // height: 100vh;
+                    @media (min-width: 1024px){
+                        display: none;
+                    }
+
+                    svg{
+                        font-size: 30px;
+                        display: block;
+                        margin: 0 auto;
+                        padding-top: 20px;
+                    }
+                    
+                    ul{
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        font-family: $Sunflower;
+                        font-size: 22px;
+                        li{
+                            list-style-type: none;
+                            padding: 5px 40px;
+                        }
+                    }
                 }
             }
-            .links{
-                position: fixed;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                transition: transform 0.8s ease-in-out;
-                background-color: white;
-                // height: 100vh;
-                @media (min-width: 768px){
-                    
-                }
-                
-                ul{
-                    padding: 0;
-                    display: flex;
-                    flex-direction: column;
-                    @media (min-width: 768px){
-                    width: 100%;
-                    justify-content: center;
-                    padding: 0;
-                    }
-                    li{
-                        
-                        list-style-type: none;
-                        padding: 0 40px;
-                    }
+            .desktop{
+                display: none;
+                @media (min-width: 1024px) {
+                    display: block;
+
                 }
             }
         }
     }
 
     .home{
+        flex: 1;
+        display: flex;
+        align-items: center;
         .home-container{
-            // width: 100vw;
-            video{
-                // width: 500px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            .video-container{
+                float: left;
+            }
+            .cover{
+                height: auto;
+                width: 100%;
+                position: absolute;
+                float: left;
+                z-index: 1;
+                align-self: center;
+                display: flex;
+                justify-content: center;
+                h1{
+                    text-align: center;
+                    color: white;
+                    font-family: $Yeon;
+                    border: 2px solid white;
+                    padding: 0 5px;
+                    background-color: rgba(0,0,0,.5);
+                    box-shadow: 0 0 15px 5px #222222;
+                }
             }
         }
     }
 
     .portfolio{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 20px 0;
+        @media (min-width: 768px){
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
         .artwork{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
             img{
-                max-width: 300px;
+                width: 300px;
+                height: 300px;
+                box-shadow: 0 0 10px 5px #333333;
             }
+        }
+    }
+
+    .about{
+        flex: 1;
+        margin: 20px 0;
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+        }
+        h1{
+            font-family: $Yeon;
+            text-align: center;
+        }
+        ul{
+            li{
+                list-style-type: none;
+            }
+        }
+        p{
+            padding: 5px 15px;
+            border-left: 2px solid black;
+            margin: 15px;
+            font-family: $Sunflower;
+        }
+       div{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+        a{
+            width: 200px;
+            text-align: center;
+            font-family: $Yeon;
+            text-decoration: none;
+            border: 2px solid black;
+            margin: 10px;
+            font-size: 30px;
+            padding: 10px;
+        }
+       }
+    }
+
+    .artwork{
+        flex: 1;
+        img{
+            width: 100%;
+            margin: 20px 0;
+        }
+        h1{
+            font-family: $Yeon;
+            margin: 10px;
+        }
+        p{
+            font-family: $Sunflower;
+            margin: 10px;
+        }
+    }
+
+    .footer{
+        background-color: #222;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        a{
+            margin: 5px 15px;
+            padding: 10px;
+            color: white;
+            font-size: 30px;
+            background-color: black;
+            box-shadow: 0 0 8px 2px white;
+            border-radius: 60px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }

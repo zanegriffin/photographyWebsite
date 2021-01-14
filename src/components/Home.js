@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactPlayer from 'react-player'
 
 const Home = (props) => {
 
@@ -10,9 +11,10 @@ const Home = (props) => {
         <div className='home'>
             <div className='home-container'>
                 <div className='video-container'>
-                    <video  width="200" autoPlay loop muted poster={props.assets.poster ? props.assets.poster.fields.file.url : ''}>
+                    {/* <video autoPlay loop muted preload poster={props.assets.poster ? props.assets.poster.fields.file.url : ''}>
                         <source src={props.assets.video ? props.assets.video.fields.file.url : ''} type='video/mp4' />
-                    </video>
+                    </video> */}
+                    <ReactPlayer url={props.assets.video ? props.assets.video.fields.file.url : ''} playing={true} loop={true} width='100%' height='100%'/>
                 </div>
                 <div className='cover'>
                     <h1>{props.profile.displayName}</h1>
