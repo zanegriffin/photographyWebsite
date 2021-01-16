@@ -24,7 +24,7 @@ const Header = () => {
 
     return(
         <div className='header'>
-            <h1>Artist Portfolio</h1>
+            <h1>ARTIST PORTFOLIO</h1>
             <div className='nav-bar'>
                 <div className='mobile'>
                     <div className='nav-icon' onClick={handleOnClick}>
@@ -40,7 +40,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className='desktop'>
-                    <div className='links' style={style} >
+                    <div className='desk-links' >
                         <ul>
                             <Link to='/' style={{'textDecoration': 'none'}} ><li>Home</li></Link>
                             <Link to='/portfolio' style={{'textDecoration': 'none'}} ><li>Portfolio</li></Link>

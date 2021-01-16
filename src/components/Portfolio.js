@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Artwork from './Artwork'
 
 const Portfolio = (props) => {
+    const [active, setActive] = useState(false)
+    const [artwork, setArtwork] = useState({})
 
     const artworks = props.assets.map(artwork => {
 
@@ -12,13 +15,21 @@ const Portfolio = (props) => {
     })
 
     const handleClick = (artwork) => {
-        props.setSelectedArt(artwork)
-        props.history.push('/artwork/' + artwork.fields.title)
+        setActive(!active)
+        setArtwork(artwork)
+        console.log(active, artwork)
     }
+
+    // const renderArtwork = () => {
+    //     if(active && artwork){
+    //         return <Artwork selectedArt={artwork}/>
+    //     }
+    // }
 
     return(
         <div className='portfolio'>
             {artworks}
+            {active ? <Artwork selectedArt={artwork} handleClick={handleClick} /> : ''}
         </div>
     )
 }

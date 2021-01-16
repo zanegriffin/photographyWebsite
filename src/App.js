@@ -15,7 +15,7 @@ function App() {
   const [homePageAssets, setHomePageAssets] = useState({})
   const [portfolioAssets, setPortfolioAssets] = useState([])
   const [profileAssets, setProfileAssets] = useState({})
-  const [selectedArt, setSelectedArt] = useState({})
+  
 
   // contentful
   const SPACE_ID = process.env.REACT_APP_SPACE_ID
@@ -68,9 +68,8 @@ function App() {
       <Header/>
       {homePageAssets ? <Switch>
         <Route exact path='/' render={(rp) => <Home {...rp} assets={homePageAssets} profile={profileAssets}/>} />
-        <Route exact path='/portfolio' render={(rp) => <Portfolio {...rp} assets={portfolioAssets} setSelectedArt={setSelectedArt} />} />
+        <Route exact path='/portfolio' render={(rp) => <Portfolio {...rp} assets={portfolioAssets} />} />
         <Route exact path='/about' render={(rp) => <About {...rp} assets={profileAssets} />} />
-        <Route exact path='/artwork/:artwork' render={(rp) => <Artwork {...rp} assets={profileAssets} selectedArt={selectedArt} />} />
       </Switch> : <h1>Loading</h1>}
       <Footer />
     </div>
