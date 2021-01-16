@@ -132,7 +132,7 @@ $Yeon: 'Raleway', cursive;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 30px;
         margin: 20px auto;
         max-width: 900px;
         @media (min-width: 768px){
@@ -145,10 +145,18 @@ $Yeon: 'Raleway', cursive;
             justify-content: center;
             align-items: center;
             
-            img{
+            
+            .img{
                 width: 275px;
                 height: 275px;
                 box-shadow: 0 0 10px 5px #333333;
+                content: '';
+                transition: 0.8s ease-in-out;
+                &:hover{
+                    transform: scale(1.2,1.2);
+                    border: 2px solid aqua;
+                    z-index: 1;
+                }
             }
         }
     }
@@ -215,12 +223,19 @@ $Yeon: 'Raleway', cursive;
             width: 80%;
             padding: 15px 20px;
             border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 60px;
             @media (min-width: 768px){
                 width: 50%;
             }
             img{
                 width: 100%;
+                height: auto;
+                max-width: 400px; 
+                max-height: 500px;
                 margin: 20px 0;
+                align-self: center;
             }
             h1{
                 font-family: $Yeon;

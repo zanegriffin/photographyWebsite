@@ -6,10 +6,16 @@ const Portfolio = (props) => {
     const [artwork, setArtwork] = useState({})
 
     const artworks = props.assets.map(artwork => {
-
+        const style = {
+            backgroundImage: `url(${artwork.fields.image.fields.file.url})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+        }
         return(
             <div className='artwork' onClick={() => handleClick(artwork)}>
-                <img src={artwork.fields.image.fields.file.url} ></img>
+                {/* <img src={artwork.fields.image.fields.file.url} ></img> */}
+                <div className='img' style={style}></div>
             </div>
         )
     })
