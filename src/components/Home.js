@@ -5,7 +5,7 @@ const Home = (props) => {
 
     // const poster = props.assets.poster.fields.file.url
     // const video = props.assets.video.fields.file.url
-    console.log(props.profile)
+   
 
     return(
         <div className='home'>

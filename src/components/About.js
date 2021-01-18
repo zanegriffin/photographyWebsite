@@ -1,7 +1,7 @@
 import React from 'react'
 
 const About = (props) => {
-   console.log(props)
+   
    const skills = props?.assets?.skills?.map(skill => {
        return(
             <>

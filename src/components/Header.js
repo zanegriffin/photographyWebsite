@@ -18,7 +18,7 @@ const Header = () => {
             
             setStyle({'transform': 'translate(0px, 0px)'})
         }
-        console.log('click', hidden, style)
+       
     }
 
 

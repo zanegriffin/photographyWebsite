@@ -33,7 +33,7 @@ function App() {
     })
     .then((response) => {
       setHomePageAssets(response.items[0].fields)
-      console.log(response.items)})
+    })
     .catch(console.error)
   }
 
@@ -43,7 +43,7 @@ function App() {
     })
     .then((response) => {
       setPortfolioAssets(response.items)
-      console.log(response.items)})
+      })
     .catch(console.error)
   }
 
@@ -53,7 +53,7 @@ function App() {
     })
     .then((response) => {
       setProfileAssets(response.items[0].fields)
-      console.log(response.items)})
+      })
     .catch(console.error)
   }
  

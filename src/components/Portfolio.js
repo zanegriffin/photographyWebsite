@@ -23,7 +23,7 @@ const Portfolio = (props) => {
     const handleClick = (artwork) => {
         setActive(!active)
         setArtwork(artwork)
-        console.log(active, artwork)
+       
     }
 
     // const renderArtwork = () => {
