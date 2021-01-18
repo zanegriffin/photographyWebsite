@@ -144,7 +144,7 @@ $Yeon: 'Raleway', cursive;
             display: flex;
             justify-content: center;
             align-items: center;
-            
+            margin: 10px;
             
             .img{
                 width: 275px;
@@ -152,12 +152,23 @@ $Yeon: 'Raleway', cursive;
                 box-shadow: 0 0 10px 5px #333333;
                 content: '';
                 transition: 0.8s ease-in-out;
+                animation: load-images 0.5s ease-in 2s; 
                 &:hover{
                     transform: scale(1.2,1.2);
                     border: 2px solid aqua;
                     z-index: 1;
                 }
             }
+        }
+    }
+    @keyframes load-images {
+        from {
+            height: 0;
+            display: none;
+        }
+        to{
+            display: block;
+            height: 275;
         }
     }
 
