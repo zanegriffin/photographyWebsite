@@ -15,6 +15,7 @@ function App() {
   const [homePageAssets, setHomePageAssets] = useState({})
   const [portfolioAssets, setPortfolioAssets] = useState([])
   const [profileAssets, setProfileAssets] = useState({})
+  const [links, setLinks] = useState([])
   
 
   // contentful
@@ -52,7 +53,9 @@ function App() {
       'content_type': 'artistProfile'
     })
     .then((response) => {
+      // console.log('profile', response.items[0].fields.links)
       setProfileAssets(response.items[0].fields)
+      setLinks(response.items[0].fields.links)
       })
     .catch(console.error)
   }
@@ -69,7 +72,7 @@ function App() {
       {homePageAssets ? <Switch>
         <Route exact path='/' render={(rp) => <Home {...rp} assets={homePageAssets} profile={profileAssets}/>} />
         <Route exact path='/portfolio' render={(rp) => <Portfolio {...rp} assets={portfolioAssets} />} />
-        <Route exact path='/about' render={(rp) => <About {...rp} assets={profileAssets} />} />
+        <Route exact path='/about' render={(rp) => <About {...rp} assets={profileAssets} links={links} />} />
       </Switch> : <h1>Loading</h1>}
       <Footer />
     </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const About = (props) => {
-   
+   console.log(props)
    const skills = props?.assets?.skills?.map(skill => {
        return(
             <>
@@ -19,8 +19,8 @@ const About = (props) => {
             <p>{props?.assets.aboutArtist}</p>
             <p>{props?.assets.about}</p>
             <div>
-                <a target="_blank" href={props?.assets?.links[0]}>Artist Instagram</a>
-                <a target="_blank" href={props?.assets?.links[1]}>Artist Patreon</a>
+                <a target="_blank" href={props?.links[0]}>Artist Instagram</a>
+                <a target="_blank" href={props?.links[1]}>Artist Patreon</a>
             </div>
             
         </div>
